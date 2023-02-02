@@ -1,0 +1,183 @@
+mysql> create database GMS;
+Query OK, 1 row affected (0.22 sec)
+
+mysql> use GMS
+Database changed
+mysql> create table Crops(crop_id varchar(6) UNIQUE,crop_name varchar(30) NOT NULL,name_of_trail varchar(20) NOT NULL ,season varchar(30) NOT NULL,year YEAR NOT NULL,plot_size float NOT NULL,number_of_rows Integer NOT NULL,gross float default null,net float default null ,number_Of_replications Integer NOT NULL,date_of_sowing DATE NOT NULL);
+Query OK, 0 rows affected (2.19 sec)
+
+mysql> desc Crops;
++------------------------+-------------+------+-----+---------+-------+
+| Field                  | Type        | Null | Key | Default | Extra |
++------------------------+-------------+------+-----+---------+-------+
+| crop_id                | varchar(6)  | YES  | UNI | NULL    |       |
+| crop_name              | varchar(30) | NO   |     | NULL    |       |
+| name_of_trail          | varchar(20) | NO   |     | NULL    |       |
+| season                 | varchar(30) | NO   |     | NULL    |       |
+| year                   | year        | NO   |     | NULL    |       |
+| plot_size              | float       | NO   |     | NULL    |       |
+| number_of_rows         | int         | NO   |     | NULL    |       |
+| gross                  | float       | YES  |     | NULL    |       |
+| net                    | float       | YES  |     | NULL    |       |
+| number_Of_replications | int         | NO   |     | NULL    |       |
+| date_of_sowing         | date        | NO   |     | NULL    |       |
++------------------------+-------------+------+-----+---------+-------+
+11 rows in set (0.18 sec)
+
+mysql> alter table Crops add constraint crop_pk primary key(crop_id);
+Query OK, 0 rows affected (1.97 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Crops;
++------------------------+-------------+------+-----+---------+-------+
+| Field                  | Type        | Null | Key | Default | Extra |
++------------------------+-------------+------+-----+---------+-------+
+| crop_id                | varchar(6)  | NO   | PRI | NULL    |       |
+| crop_name              | varchar(30) | NO   |     | NULL    |       |
+| name_of_trail          | varchar(20) | NO   |     | NULL    |       |
+| season                 | varchar(30) | NO   |     | NULL    |       |
+| year                   | year        | NO   |     | NULL    |       |
+| plot_size              | float       | NO   |     | NULL    |       |
+| number_of_rows         | int         | NO   |     | NULL    |       |
+| gross                  | float       | YES  |     | NULL    |       |
+| net                    | float       | YES  |     | NULL    |       |
+| number_Of_replications | int         | NO   |     | NULL    |       |
+| date_of_sowing         | date        | NO   |     | NULL    |       |
++------------------------+-------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> create table CropTesting(crop_id varchar(6),initial_stand float,final_stand float,days_to_firstflowering integer,days_to_halfflowering integer,plant_height float,number_of_main_branches integer,secondary_branches integer,pest_score int check(pest_score>=0 and pest_score<=10),disease_score int check(disease_score>=0 and disease_score<=10),number_of_seeds int check(number_of_seeds>=1 and number_of_seeds<=4),average_number_of_pods float,yield_per_plot float,average_yield_per_plant float,oil_percentage int check(oil_percentage>=0 and oil_percentage<=100));
+Query OK, 0 rows affected (1.31 sec)
+
+mysql> desc CropTesting
+    -> ;
++-------------------------+------------+------+-----+---------+-------+
+| Field                   | Type       | Null | Key | Default | Extra |
++-------------------------+------------+------+-----+---------+-------+
+| crop_id                 | varchar(6) | YES  |     | NULL    |       |
+| initial_stand           | float      | YES  |     | NULL    |       |
+| final_stand             | float      | YES  |     | NULL    |       |
+| days_to_firstflowering  | int        | YES  |     | NULL    |       |
+| days_to_halfflowering   | int        | YES  |     | NULL    |       |
+| plant_height            | float      | YES  |     | NULL    |       |
+| number_of_main_branches | int        | YES  |     | NULL    |       |
+| secondary_branches      | int        | YES  |     | NULL    |       |
+| pest_score              | int        | YES  |     | NULL    |       |
+| disease_score           | int        | YES  |     | NULL    |       |
+| number_of_seeds         | int        | YES  |     | NULL    |       |
+| average_number_of_pods  | float      | YES  |     | NULL    |       |
+| yield_per_plot          | float      | YES  |     | NULL    |       |
+| average_yield_per_plant | float      | YES  |     | NULL    |       |
+| oil_percentage          | int        | YES  |     | NULL    |       |
++-------------------------+------------+------+-----+---------+-------+
+15 rows in set (0.00 sec)
+
+mysql> alter table CropTesting add constraint crop_pk primary key(crop_id);
+Query OK, 0 rows affected (1.72 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table CropTesting add constraint foreign key(crop_id) references  Crops(crop_id);
+Query OK, 0 rows affected (2.68 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc CropTesting;
++-------------------------+------------+------+-----+---------+-------+
+| Field                   | Type       | Null | Key | Default | Extra |
++-------------------------+------------+------+-----+---------+-------+
+| crop_id                 | varchar(6) | NO   | PRI | NULL    |       |
+| initial_stand           | float      | YES  |     | NULL    |       |
+| final_stand             | float      | YES  |     | NULL    |       |
+| days_to_firstflowering  | int        | YES  |     | NULL    |       |
+| days_to_halfflowering   | int        | YES  |     | NULL    |       |
+| plant_height            | float      | YES  |     | NULL    |       |
+| number_of_main_branches | int        | YES  |     | NULL    |       |
+| secondary_branches      | int        | YES  |     | NULL    |       |
+| pest_score              | int        | YES  |     | NULL    |       |
+| disease_score           | int        | YES  |     | NULL    |       |
+| number_of_seeds         | int        | YES  |     | NULL    |       |
+| average_number_of_pods  | float      | YES  |     | NULL    |       |
+| yield_per_plot          | float      | YES  |     | NULL    |       |
+| average_yield_per_plant | float      | YES  |     | NULL    |       |
+| oil_percentage          | int        | YES  |     | NULL    |       |
++-------------------------+------------+------+-----+---------+-------+
+15 rows in set (0.00 sec)
+
+mysql> 
+
+
+mysql> create table PlantTesting(crop_id varchar(6),growth_habit varchar(20),leaflet_size float ,leaflet_color varchar(20),stem  varchar(20),flower_on_mainaxis varchar(20),flower_on_sidebranches varchar(20),inflorescence varchar(20),time_of_maturity integer,pod_constriction varchar(20),pod_reticulation varchar(20),number_of_kernels integer,presence_of_beak varchar(20),shelling_percentage integer,testa_color varchar(20),color_of_testa varchar(20),kernel_shape varchar(20),kernel_weight float,fresh_seed_dormancy varchar(20),kernel_oil_percentage varchar(20));
+Query OK, 0 rows affected (1.38 sec)
+
+mysql> desc PlantTesting;
++------------------------+-------------+------+-----+---------+-------+
+| Field                  | Type        | Null | Key | Default | Extra |
++------------------------+-------------+------+-----+---------+-------+
+| crop_id                | varchar(6)  | YES  |     | NULL    |       |
+| growth_habit           | varchar(20) | YES  |     | NULL    |       |
+| leaflet_size           | float       | YES  |     | NULL    |       |
+| leaflet_color          | varchar(20) | YES  |     | NULL    |       |
+| stem                   | varchar(20) | YES  |     | NULL    |       |
+| flower_on_mainaxis     | varchar(20) | YES  |     | NULL    |       |
+| flower_on_sidebranches | varchar(20) | YES  |     | NULL    |       |
+| inflorescence          | varchar(20) | YES  |     | NULL    |       |
+| time_of_maturity       | int         | YES  |     | NULL    |       |
+| pod_constriction       | varchar(20) | YES  |     | NULL    |       |
+| pod_reticulation       | varchar(20) | YES  |     | NULL    |       |
+| number_of_kernels      | int         | YES  |     | NULL    |       |
+| presence_of_beak       | varchar(20) | YES  |     | NULL    |       |
+| shelling_percentage    | int         | YES  |     | NULL    |       |
+| testa_color            | varchar(20) | YES  |     | NULL    |       |
+| color_of_testa         | varchar(20) | YES  |     | NULL    |       |
+| kernel_shape           | varchar(20) | YES  |     | NULL    |       |
+| kernel_weight          | float       | YES  |     | NULL    |       |
+| fresh_seed_dormancy    | varchar(20) | YES  |     | NULL    |       |
+| kernel_oil_percentage  | varchar(20) | YES  |     | NULL    |       |
++------------------------+-------------+------+-----+---------+-------+
+20 rows in set (0.01 sec)
+
+mysql> alter table PlantTesting  add constraint plant_pk primary key(crop_id);
+Query OK, 0 rows affected (1.36 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table PlantTesting add constraint foreign key(crop_id) references  Crops(crop_id);
+Query OK, 0 rows affected (3.37 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc PlantTesting;
++------------------------+-------------+------+-----+---------+-------+
+| Field                  | Type        | Null | Key | Default | Extra |
++------------------------+-------------+------+-----+---------+-------+
+| crop_id                | varchar(6)  | NO   | PRI | NULL    |       |
+| growth_habit           | varchar(20) | YES  |     | NULL    |       |
+| leaflet_size           | float       | YES  |     | NULL    |       |
+| leaflet_color          | varchar(20) | YES  |     | NULL    |       |
+| stem                   | varchar(20) | YES  |     | NULL    |       |
+| flower_on_mainaxis     | varchar(20) | YES  |     | NULL    |       |
+| flower_on_sidebranches | varchar(20) | YES  |     | NULL    |       |
+| inflorescence          | varchar(20) | YES  |     | NULL    |       |
+| time_of_maturity       | int         | YES  |     | NULL    |       |
+| pod_constriction       | varchar(20) | YES  |     | NULL    |       |
+| pod_reticulation       | varchar(20) | YES  |     | NULL    |       |
+| number_of_kernels      | int         | YES  |     | NULL    |       |
+| presence_of_beak       | varchar(20) | YES  |     | NULL    |       |
+| shelling_percentage    | int         | YES  |     | NULL    |       |
+| testa_color            | varchar(20) | YES  |     | NULL    |       |
+| color_of_testa         | varchar(20) | YES  |     | NULL    |       |
+| kernel_shape           | varchar(20) | YES  |     | NULL    |       |
+| kernel_weight          | float       | YES  |     | NULL    |       |
+| fresh_seed_dormancy    | varchar(20) | YES  |     | NULL    |       |
+| kernel_oil_percentage  | varchar(20) | YES  |     | NULL    |       |
++------------------------+-------------+------+-----+---------+-------+
+20 rows in set (0.01 sec)
+
+
+mysql> show tables;
++---------------+
+| Tables_in_GMS |
++---------------+
+| CropTesting   |
+| Crops         |
+| PlantTesting  |
++---------------+
+3 rows in set (0.01 sec)
+
