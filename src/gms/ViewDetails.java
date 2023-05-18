@@ -6,6 +6,9 @@ package gms;
 
 
 import java.io.File;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,6 +20,8 @@ import java.sql.ResultSet;
 import javax.swing.JFileChooser;
 import jxl.Sheet;
 import jxl.Workbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
@@ -82,6 +87,7 @@ public class ViewDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane7 = new javax.swing.JScrollPane();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -98,6 +104,12 @@ public class ViewDetails extends javax.swing.JFrame {
         printCropTesting = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jScrollPane7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane7.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jScrollPane7.setAutoscrolls(true);
 
         jScrollPane6.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jScrollPane6.setAutoscrolls(true);
@@ -242,12 +254,15 @@ public class ViewDetails extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(printPlantTesting)
-                .addContainerGap(1052, Short.MAX_VALUE))
+                .addContainerGap(964, Short.MAX_VALUE))
         );
 
         jScrollPane5.getAccessibleContext().setAccessibleName("");
 
         jScrollPane6.setViewportView(jPanel1);
+
+        jScrollPane7.setViewportView(jScrollPane6);
+        jScrollPane6.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -255,40 +270,64 @@ public class ViewDetails extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1683, Short.MAX_VALUE))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1739, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jScrollPane6.getAccessibleContext().setAccessibleName("");
+        jScrollPane7.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void printCropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printCropActionPerformed
-        try{
-            JFileChooser jFilechooser= new JFileChooser("C:\\Users\\poojitha\\Desktop\\Jtabletoexcel");
-            FileNameExtensionFilter fnef=new FileNameExtensionFilter("EXCEL FILES","xls","xlsx","xlsm");
-             jFilechooser.setFileFilter(fnef);
-            jFilechooser.showSaveDialog(null);
+ private void exportToExcel() {
+        try {
+            XSSFWorkbook workbook = new XSSFWorkbook();
+            FileOutputStream fileOut = new FileOutputStream("data.xlsx");
             
-            File saveFile=jFileChooser.getSectedFile();
+            // Create a new sheet
+            String sheetName = "Table Data";
+            workbook.createSheet(sheetName);
+            org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheet(sheetName);
             
-            if(saveFile!= null){
-                saveFile= new File(saveFile.toString()+".xlsx");
-                Workbook wb=new XSSFWorkbook();
-                Sheet sheet =wb.createSheet("crops");
-                
-                
-                
+            // Write table headers
+            Row headerRow = sheet.createRow(0);
+            for (int i = 0; i < model.getColumnCount(); i++) {
+                Cell cell = headerRow.createCell(i);
+                cell.setCellValue(model.getColumnName(i));
             }
             
+            // Write table data
+            for (int i = 0; i < model.getRowCount(); i++) {
+                Row dataRow = sheet.createRow(i + 1);
+                for (int j = 0; j < model.getColumnCount(); j++) {
+                    Cell cell = dataRow.createCell(j);
+                    cell.setCellValue(model.getValueAt(i, j).toString());
+                }
+            }
+            
+            workbook.write(fileOut);
+            fileOut.close();
+            
+            // Prompt the user to print
+            int choice = JOptionPane.showConfirmDialog(this, "Data exported to Excel. Would you like to print?", 
+                    "Print Confirmation", JOptionPane.YES_NO_OPTION);
+            if (choice == JOptionPane.YES_OPTION) {
+                // Perform print operation here
+            }
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    private void printCropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printCropActionPerformed
+        
+            exportToExcel();
         }
     }//GEN-LAST:event_printCropActionPerformed
 
@@ -335,12 +374,11 @@ public class ViewDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JButton printCrop;
     private javax.swing.JButton printCropTesting;
     private javax.swing.JButton printPlantTesting;

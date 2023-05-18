@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gms;
-
-import static gms.deletePlantTesting.getConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -351,6 +349,7 @@ public class deleteCropTesting extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Data deleted successfully");
 
                 }else{
+                     dispose();
                     JOptionPane.showMessageDialog(this,"Sorry the data doesn't exist");
                 }
             }
@@ -359,11 +358,13 @@ public class deleteCropTesting extends javax.swing.JFrame {
             }
 
         }
+         if(result==JOptionPane.NO_OPTION)
+         {
+              dispose();
+         }
     }//GEN-LAST:event_bbackActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+  
      public static Connection getConnection()throws SQLException, ClassNotFoundException
     {
          String url="jdbc:mysql://localhost:3306/GMS";

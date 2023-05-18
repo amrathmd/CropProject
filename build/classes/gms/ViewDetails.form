@@ -25,8 +25,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane6" min="-2" pref="1198" max="-2" attributes="0"/>
-              <EmptySpace pref="1683" max="32767" attributes="0"/>
+              <Component id="jScrollPane7" min="-2" pref="1150" max="-2" attributes="0"/>
+              <EmptySpace pref="1739" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -34,15 +34,22 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane6" min="-2" pref="836" max="-2" attributes="0"/>
+              <Component id="jScrollPane7" min="-2" pref="966" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane7">
       <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+        <Property name="horizontalScrollBarPolicy" type="int" value="32"/>
+        <Property name="verticalScrollBarPolicy" type="int" value="22"/>
         <Property name="viewportBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
@@ -56,244 +63,261 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JScrollPane" name="jScrollPane6">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="e8" green="e3" red="9a" type="rgb"/>
+            <Property name="viewportBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                <BevelBorder/>
+              </Border>
             </Property>
             <Property name="autoscrolls" type="boolean" value="true"/>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
 
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="573" max="-2" attributes="0"/>
-                              <Component id="printCrop" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="579" max="-2" attributes="0"/>
-                              <Component id="printCropTesting" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane2" alignment="0" min="-2" pref="1092" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" pref="263" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane5" alignment="0" min="-2" pref="1132" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane3" alignment="0" min="-2" pref="1172" max="-2" attributes="0"/>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e8" green="e3" red="9a" type="rgb"/>
+                </Property>
+                <Property name="autoscrolls" type="boolean" value="true"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="573" max="-2" attributes="0"/>
+                                  <Component id="printCrop" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="579" max="-2" attributes="0"/>
+                                  <Component id="printCropTesting" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="596" max="-2" attributes="0"/>
-                              <Component id="printPlantTesting" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="130" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane2" alignment="0" min="-2" pref="1092" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" alignment="0" min="-2" pref="263" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane5" alignment="0" min="-2" pref="1132" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane3" alignment="0" min="-2" pref="1172" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="596" max="-2" attributes="0"/>
+                                  <Component id="printPlantTesting" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="130" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="162" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="printCrop" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="164" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="printCropTesting" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" min="-2" pref="195" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="printPlantTesting" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="1052" max="32767" attributes="0"/>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="162" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="printCrop" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" pref="164" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="printCropTesting" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane5" min="-2" pref="195" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="printPlantTesting" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="964" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Crops Details"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-              <Properties>
-                <Property name="autoscrolls" type="boolean" value="true"/>
-              </Properties>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                </DimensionLayout>
+              </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="cropsTable">
+                <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="10" rowCount="1">
-                        <Column editable="false" title=" year" type="java.lang.Object"/>
-                        <Column editable="false" title=" crop name" type="java.lang.Object"/>
-                        <Column editable="false" title="name_of_trail" type="java.lang.Object"/>
-                        <Column editable="false" title="season" type="java.lang.Object"/>
-                        <Column editable="false" title=" plot_size" type="java.lang.Object"/>
-                        <Column editable="false" title=" number_of_rows" type="java.lang.Object"/>
-                        <Column editable="false" title="gross" type="java.lang.Object"/>
-                        <Column editable="false" title="net" type="java.lang.Object"/>
-                        <Column editable="false" title=" nunumber_Of_replications" type="java.lang.Object"/>
-                        <Column editable="false" title="date_of_sowing" type="java.lang.Object"/>
-                      </Table>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="Crops Details"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                  <Properties>
+                    <Property name="autoscrolls" type="boolean" value="true"/>
+                  </Properties>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="cropsTable">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="10" rowCount="1">
+                            <Column editable="false" title=" year" type="java.lang.Object"/>
+                            <Column editable="false" title=" crop name" type="java.lang.Object"/>
+                            <Column editable="false" title="name_of_trail" type="java.lang.Object"/>
+                            <Column editable="false" title="season" type="java.lang.Object"/>
+                            <Column editable="false" title=" plot_size" type="java.lang.Object"/>
+                            <Column editable="false" title=" number_of_rows" type="java.lang.Object"/>
+                            <Column editable="false" title="gross" type="java.lang.Object"/>
+                            <Column editable="false" title="net" type="java.lang.Object"/>
+                            <Column editable="false" title=" nunumber_Of_replications" type="java.lang.Object"/>
+                            <Column editable="false" title="date_of_sowing" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Crop Testing Details"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                  <Properties>
+                    <Property name="autoscrolls" type="boolean" value="true"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="CropTestingt">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="16" rowCount="1">
+                            <Column editable="false" title="Year" type="java.lang.Object"/>
+                            <Column editable="false" title="Season" type="java.lang.Object"/>
+                            <Column editable="false" title="initial_stand" type="java.lang.Object"/>
+                            <Column editable="false" title="final_stand" type="java.lang.Object"/>
+                            <Column editable="false" title="days_to_firstflowering" type="java.lang.Object"/>
+                            <Column editable="false" title="days_to_halfflowering" type="java.lang.Object"/>
+                            <Column editable="false" title=" plant_height" type="java.lang.Object"/>
+                            <Column editable="false" title=" number_of_main_branches" type="java.lang.Object"/>
+                            <Column editable="false" title="secondary_branches" type="java.lang.Object"/>
+                            <Column editable="false" title="pest_score" type="java.lang.Object"/>
+                            <Column editable="false" title=" disease_score" type="java.lang.Object"/>
+                            <Column editable="false" title="number_of_seeds" type="java.lang.Object"/>
+                            <Column editable="false" title=" average_number_of_pods" type="java.lang.Object"/>
+                            <Column editable="false" title=" yield_per_plot" type="java.lang.Object"/>
+                            <Column editable="false" title=" average_yield_per_plant" type="java.lang.Object"/>
+                            <Column editable="false" title=" oil_percentage" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                        <Property name="autoResizeMode" type="int" value="4"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Plant Testing Details"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                  <Properties>
+                    <Property name="autoscrolls" type="boolean" value="true"/>
+                  </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+                  </AccessibilityProperties>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="PlantTestingt">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="21" rowCount="1">
+                            <Column editable="false" title="Year" type="java.lang.Object"/>
+                            <Column editable="false" title="Season" type="java.lang.Object"/>
+                            <Column editable="false" title="growth_habit" type="java.lang.Object"/>
+                            <Column editable="false" title=" leaflet_size" type="java.lang.Object"/>
+                            <Column editable="false" title="leaflet_color" type="java.lang.Object"/>
+                            <Column editable="false" title=" stem" type="java.lang.Object"/>
+                            <Column editable="false" title=" flower_on_mainaxis" type="java.lang.Object"/>
+                            <Column editable="false" title=" flower_on_sidebranches" type="java.lang.Object"/>
+                            <Column editable="false" title="inflorescence" type="java.lang.Object"/>
+                            <Column editable="false" title="time_of_maturity" type="java.lang.Object"/>
+                            <Column editable="false" title="pod_constriction" type="java.lang.Object"/>
+                            <Column editable="false" title="pod_reticulation" type="java.lang.Object"/>
+                            <Column editable="false" title="number_of_kernels" type="java.lang.Object"/>
+                            <Column editable="false" title=" presence_of_beak" type="java.lang.Object"/>
+                            <Column editable="false" title="testa_color" type="java.lang.Object"/>
+                            <Column editable="false" title="color_of_testa" type="java.lang.Object"/>
+                            <Column editable="false" title=" kernel_shape" type="java.lang.Object"/>
+                            <Column editable="false" title="fresh_seed_dormancy" type="java.lang.Object"/>
+                            <Column editable="false" title="kernel_oil_percentage" type="java.lang.Object"/>
+                            <Column editable="false" title="kernel_weight" type="java.lang.Object"/>
+                            <Column editable="false" title="shelling_percentage" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JButton" name="printPlantTesting">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="66" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Print"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="printCrop">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="66" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Print"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="printCropActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="printCropTesting">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="66" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Print"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel2">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Crop Testing Details"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-              <Properties>
-                <Property name="autoscrolls" type="boolean" value="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="CropTestingt">
-                  <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="16" rowCount="1">
-                        <Column editable="false" title="Year" type="java.lang.Object"/>
-                        <Column editable="false" title="Season" type="java.lang.Object"/>
-                        <Column editable="false" title="initial_stand" type="java.lang.Object"/>
-                        <Column editable="false" title="final_stand" type="java.lang.Object"/>
-                        <Column editable="false" title="days_to_firstflowering" type="java.lang.Object"/>
-                        <Column editable="false" title="days_to_halfflowering" type="java.lang.Object"/>
-                        <Column editable="false" title=" plant_height" type="java.lang.Object"/>
-                        <Column editable="false" title=" number_of_main_branches" type="java.lang.Object"/>
-                        <Column editable="false" title="secondary_branches" type="java.lang.Object"/>
-                        <Column editable="false" title="pest_score" type="java.lang.Object"/>
-                        <Column editable="false" title=" disease_score" type="java.lang.Object"/>
-                        <Column editable="false" title="number_of_seeds" type="java.lang.Object"/>
-                        <Column editable="false" title=" average_number_of_pods" type="java.lang.Object"/>
-                        <Column editable="false" title=" yield_per_plot" type="java.lang.Object"/>
-                        <Column editable="false" title=" average_yield_per_plant" type="java.lang.Object"/>
-                        <Column editable="false" title=" oil_percentage" type="java.lang.Object"/>
-                      </Table>
-                    </Property>
-                    <Property name="autoResizeMode" type="int" value="4"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Plant Testing Details"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-              <Properties>
-                <Property name="autoscrolls" type="boolean" value="true"/>
-              </Properties>
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-              </AccessibilityProperties>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="PlantTestingt">
-                  <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="21" rowCount="1">
-                        <Column editable="false" title="Year" type="java.lang.Object"/>
-                        <Column editable="false" title="Season" type="java.lang.Object"/>
-                        <Column editable="false" title="growth_habit" type="java.lang.Object"/>
-                        <Column editable="false" title=" leaflet_size" type="java.lang.Object"/>
-                        <Column editable="false" title="leaflet_color" type="java.lang.Object"/>
-                        <Column editable="false" title=" stem" type="java.lang.Object"/>
-                        <Column editable="false" title=" flower_on_mainaxis" type="java.lang.Object"/>
-                        <Column editable="false" title=" flower_on_sidebranches" type="java.lang.Object"/>
-                        <Column editable="false" title="inflorescence" type="java.lang.Object"/>
-                        <Column editable="false" title="time_of_maturity" type="java.lang.Object"/>
-                        <Column editable="false" title="pod_constriction" type="java.lang.Object"/>
-                        <Column editable="false" title="pod_reticulation" type="java.lang.Object"/>
-                        <Column editable="false" title="number_of_kernels" type="java.lang.Object"/>
-                        <Column editable="false" title=" presence_of_beak" type="java.lang.Object"/>
-                        <Column editable="false" title="testa_color" type="java.lang.Object"/>
-                        <Column editable="false" title="color_of_testa" type="java.lang.Object"/>
-                        <Column editable="false" title=" kernel_shape" type="java.lang.Object"/>
-                        <Column editable="false" title="fresh_seed_dormancy" type="java.lang.Object"/>
-                        <Column editable="false" title="kernel_oil_percentage" type="java.lang.Object"/>
-                        <Column editable="false" title="kernel_weight" type="java.lang.Object"/>
-                        <Column editable="false" title="shelling_percentage" type="java.lang.Object"/>
-                      </Table>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="printPlantTesting">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Black" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Print"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="printCrop">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Black" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Print"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="printCropActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="printCropTesting">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Black" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Print"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

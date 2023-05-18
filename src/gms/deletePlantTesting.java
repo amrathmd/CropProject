@@ -114,6 +114,9 @@ public class deletePlantTesting extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jScrollPane2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jScrollPane2.setAutoscrolls(true);
 
@@ -170,7 +173,7 @@ public class deletePlantTesting extends javax.swing.JFrame {
                 bDeleteActionPerformed(evt);
             }
         });
-        jPanel1.add(bDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 710, 265, 33));
+        jPanel1.add(bDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 690, 265, 33));
 
         jL1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jPanel1.add(jL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 43, 200, 18));
@@ -275,18 +278,17 @@ public class deletePlantTesting extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane2)
-                    .addContainerGap(30, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 831, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -309,6 +311,7 @@ public class deletePlantTesting extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Data deleted successfully");
 
                 }else{
+                    dispose();
                     JOptionPane.showMessageDialog(this,"Sorry the data doesn't exist");
                 }
             }
@@ -316,6 +319,10 @@ public class deletePlantTesting extends javax.swing.JFrame {
                 Logger.getLogger(Cropdetails.class.getName()).log(Level.SEVERE, null, ex);
             }
 
+        }
+         if(result==JOptionPane.NO_OPTION)
+        {
+            dispose();
         }
     }//GEN-LAST:event_bDeleteActionPerformed
 
